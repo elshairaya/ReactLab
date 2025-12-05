@@ -40,3 +40,18 @@
 .read-the-docs {
   color: #888;
 }
+.app-container {
+  text-align: center;
+  padding: 40px;
+  font-family: sans-serif;
+  background-color: #f8f9fa;
+  color: black
+}
+
+.app-title {
+  text-align: left;
+  margin-left: 150px;
+  border-left: 6px solid #00c9d2;
+  padding-left: 10px;
+  font-size: 32px;
+}

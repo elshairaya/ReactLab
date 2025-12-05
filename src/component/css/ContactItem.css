@@ -1,0 +1,28 @@
+.contact-item {
+  margin-bottom: 10px;
+  background: #d9f7fc;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.3s;
+}
+
+.contact-item:hover {
+  background: #c2f1fa;
+}
+
+.delete-btn {
+  background: #00c9d2;
+  border: none;
+  padding: 8px 15px;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.delete-btn:hover {
+  background: #009ea6;
+}

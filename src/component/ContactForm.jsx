@@ -1,46 +1,50 @@
 import { useState } from "react";
-function ContactForm({ addPerson }){
-      const [username, setUsername] = useState("");
-    const [Email, setEmail] = useState("");
+import "./css/ContactForm.css";
 
+function ContactForm({ addPerson }) {
+  const [username, setUsername] = useState("");
+  const [Email, setEmail] = useState("");
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        const newPerson = {
-            username,
-            Email,
-        };
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-        console.log(newPerson);
-        // setPeople(people.push(newPerson));
+    const newPerson = {
+      id: Date.now(),
+      username,
+      Email,
+    };
 
-        addPerson(newPerson);
-        // console.log(people);
+    addPerson(newPerson);
 
-        setUsername("");
-        setEmail("");
+    setUsername("");
+    setEmail("");
+  };
 
-    }
+  return (
+    <div className="contact-form-container">
+      <form className="contact-form-box" onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="Name"
+          className="contact-input"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
 
-    return(
- <div style={{ textAlign: "center", marginTop: "40px" }}>
-            <hr style={{ margin: "30px 0" }} />
-            <h1>Contact Manager App </h1>
+        <input
+          type="email"
+          placeholder="Email"
+          className="contact-input"
+          value={Email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
 
-            <h2>Add a Person</h2>
-            <form onSubmit={handleSubmit}>
-                <input type="text" placeholder="Name" value={username}
-                    onChange={(e) => setUsername(e.target.value)} />
-
-                <input type="text" placeholder="Email" value={Email} style={{ marginLeft: "10px" }}
-                    onChange={(e) => setEmail(e.target.value)}
-
-                />
-                <button type="submit" style={{ marginLeft: "10px" }}>
-                    Add Person
-                </button>
-            </form>
-
-        </div>    );
+        <button type="submit" className="contact-btn">
+          Add Contact
+        </button>
+      </form>
+    </div>
+  );
 }
+
 export default ContactForm;
