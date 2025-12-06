@@ -1,7 +1,9 @@
-import React from 'react';
 import ContactItem from './ContactItem';
 import "./css/ContactList.css"
-const ContactList = ({ people, deletePerson }) => {
+const ContactList = ({ people, setPeople }) => {
+  const deletePerson = (id) => {
+    setPeople(people.filter((p) => p.id !== id));
+  };
   return (
     <div className="contact-list-box">
       <h2 className="contact-list-title">Contacts:</h2>
