@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./css/ContactForm.css";
 
-function ContactForm({ addPerson }) {
+function ContactForm({ addPerson, people }) {
   const [username, setUsername] = useState("");
   const [Email, setEmail] = useState("");
 
@@ -9,7 +9,7 @@ function ContactForm({ addPerson }) {
     e.preventDefault();
 
     const newPerson = {
-      id: Date.now(),
+      id: people.length + 1,
       username,
       Email,
     };

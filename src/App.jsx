@@ -17,7 +17,7 @@ function App() {
   return (
     <div className="app-container">
       <h1 className="app-title">Contact Manager App</h1>
-      <ContactForm addPerson={addPerson} />
+      <ContactForm addPerson={addPerson} people={people} />
       <ContactList people={people} deletePerson={deletePerson} />
     </div>
   );
